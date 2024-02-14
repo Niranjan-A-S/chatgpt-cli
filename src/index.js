@@ -5,8 +5,14 @@ import colors from 'colors';
 
 dotenv.config();
 
+const apiKey = process.env.OPENAI_API_KEY;
+if (!apiKey) {
+    console.error('OPENAI_API_KEY is not set');
+    process.exit(1);
+}
+
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey
 });
 
 const beautifyLogs = (color, text) => { console.log(color(text)) };
