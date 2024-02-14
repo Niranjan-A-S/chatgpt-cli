@@ -22,7 +22,7 @@ const writeBootLogs = () => {
     beautifyLogs(colors.bold.green, "You can start chatting with the bot.");
 }
 
-(async function bootstrap() {
+async function bootstrap() {
     writeBootLogs();
 
     const chatHistory = []; // Store chat history in an array
@@ -47,4 +47,6 @@ const writeBootLogs = () => {
             beautifyLogs(colors.red, error);
         }
     }
-})();
+};
+
+export default bootstrap;
